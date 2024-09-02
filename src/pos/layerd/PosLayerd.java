@@ -4,6 +4,8 @@
  */
 package pos.layerd;
 
+import pos.layerd.view.LayoutView;
+
 /**
  *
  * @author ASUS
@@ -14,7 +16,9 @@ public class PosLayerd {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("hello");
+        new LayoutView().setVisible(true);
+        
+        
     }
     
 }
