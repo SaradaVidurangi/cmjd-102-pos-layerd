@@ -5,6 +5,8 @@
 package pos.layerd.controller;
 
 import pos.layerd.dto.CarCategoryDto;
+import pos.layerd.service.ServiceFactory;
+import pos.layerd.service.carcategory.CarCategoryService;
 
 /**
  *
@@ -12,7 +14,7 @@ import pos.layerd.dto.CarCategoryDto;
  */
 public class CarCategoryController {
     
-    CarCategoryService carCategoryService=null;
+    CarCategoryService carCategoryService=(CarCategoryService) ServiceFactory.getInstance().getService(ServiceFactory.Servicetype.CARCATEGORY);
 
     public String addCarCategory(CarCategoryDto carCategoryDto) throws Exception{
         return carCategoryService.addCarCategory(carCategoryDto);

@@ -4,6 +4,8 @@
  */
 package pos.layerd.view;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import pos.layerd.controller.CarCategoryController;
 import pos.layerd.dto.CarCategoryDto;
@@ -206,11 +208,16 @@ public class ManageCarCategoriesPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void addCarCategory() {
-        CarCategoryDto carCategoryDto=new CarCategoryDto(categoryIDTextfield.getText(), nameTextField.getText(), Double.parseDouble(dailyRateTextfield.getText()));
-    
-        String result=carCategoryController.addCarCategory(carCategoryDto);
-        JOptionPane.showMessageDialog(this, result);
-        clear();
+        try {
+            CarCategoryDto carCategoryDto=new CarCategoryDto(categoryIDTextfield.getText(), nameTextField.getText(), Double.parseDouble(dailyRateTextfield.getText()));
+            
+            String result=carCategoryController.addCarCategory(carCategoryDto);
+            JOptionPane.showMessageDialog(this, result);
+            clear();
+        } catch (Exception ex) {
+            Logger.getLogger(ManageCarCategoriesPanel.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
     }
     private void clear(){
         categoryIDTextfield.setText("");
