@@ -149,6 +149,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Manage Cars"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="manageCarsButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="manageCustomersButton">
           <Properties>
@@ -157,6 +160,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Manage Customers"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="manageCustomersButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="manageUsersButton">
           <Properties>
@@ -166,6 +172,9 @@
             <Property name="text" type="java.lang.String" value="Manage Users"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="manageUsersButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="newRentalButton">
           <Properties>
@@ -174,6 +183,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="New Rental"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newRentalButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="returnCarButton">
           <Properties>
@@ -182,6 +194,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Return Car"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="returnCarButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="overdueRentalsButton">
           <Properties>
@@ -190,6 +205,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Overdue Rentals"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="overdueRentalsButtonActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

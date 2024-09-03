@@ -4,16 +4,19 @@
  */
 package pos.layerd.view;
 
+import javax.swing.JOptionPane;
+import pos.layerd.controller.CarCategoryController;
+import pos.layerd.dto.CarCategoryDto;
+
 /**
  *
  * @author ASUS
  */
 public class ManageCarCategoriesPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form ManageCarCategoriesPanel
-     */
+    private CarCategoryController carCategoryController;
     public ManageCarCategoriesPanel() {
+        carCategoryController=new CarCategoryController();
         initComponents();
     }
 
@@ -72,6 +75,11 @@ public class ManageCarCategoriesPanel extends javax.swing.JPanel {
 
         addCategoriesButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         addCategoriesButton.setText("Add Categories");
+        addCategoriesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addCategoriesButtonActionPerformed(evt);
+            }
+        });
 
         deleteCategoriesButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         deleteCategoriesButton.setText("Delete categories");
@@ -160,8 +168,8 @@ public class ManageCarCategoriesPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(manageCarCategoriesHeaderPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(manageCarCategoriesBottomPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 744, Short.MAX_VALUE)
-            .addComponent(manageCarCategoriesTopPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 744, Short.MAX_VALUE)
+            .addComponent(manageCarCategoriesBottomPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(manageCarCategoriesTopPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,6 +181,10 @@ public class ManageCarCategoriesPanel extends javax.swing.JPanel {
                 .addComponent(manageCarCategoriesBottomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 185, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void addCategoriesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCategoriesButtonActionPerformed
+        addCarCategory();
+    }//GEN-LAST:event_addCategoriesButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -192,4 +204,17 @@ public class ManageCarCategoriesPanel extends javax.swing.JPanel {
     private javax.swing.JTextField nameTextField;
     private javax.swing.JButton updateCategoriesButton;
     // End of variables declaration//GEN-END:variables
+
+    private void addCarCategory() {
+        CarCategoryDto carCategoryDto=new CarCategoryDto(categoryIDTextfield.getText(), nameTextField.getText(), Double.parseDouble(dailyRateTextfield.getText()));
+    
+        String result=carCategoryController.addCarCategory(carCategoryDto);
+        JOptionPane.showMessageDialog(this, result);
+        clear();
+    }
+    private void clear(){
+        categoryIDTextfield.setText("");
+        nameTextField.setText("");
+        dailyRateTextfield.setText("");
+    }
 }

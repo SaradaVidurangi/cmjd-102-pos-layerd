@@ -70,22 +70,52 @@ public class LayoutView extends javax.swing.JFrame {
 
         manageCarsButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         manageCarsButton.setText("Manage Cars");
+        manageCarsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                manageCarsButtonActionPerformed(evt);
+            }
+        });
 
         manageCustomersButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         manageCustomersButton.setText("Manage Customers");
+        manageCustomersButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                manageCustomersButtonActionPerformed(evt);
+            }
+        });
 
         manageUsersButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         manageUsersButton.setText("Manage Users");
         manageUsersButton.setToolTipText("");
+        manageUsersButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                manageUsersButtonActionPerformed(evt);
+            }
+        });
 
         newRentalButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         newRentalButton.setText("New Rental");
+        newRentalButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newRentalButtonActionPerformed(evt);
+            }
+        });
 
         returnCarButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         returnCarButton.setText("Return Car");
+        returnCarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                returnCarButtonActionPerformed(evt);
+            }
+        });
 
         overdueRentalsButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         overdueRentalsButton.setText("Overdue Rentals");
+        overdueRentalsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                overdueRentalsButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout sideNAVPanelLayout = new javax.swing.GroupLayout(sideNAVPanel);
         sideNAVPanel.setLayout(sideNAVPanelLayout);
@@ -164,6 +194,30 @@ public class LayoutView extends javax.swing.JFrame {
         loadManageCarCategoriesPanel();
     }//GEN-LAST:event_manageCarCategoriesButtonActionPerformed
 
+    private void manageCarsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageCarsButtonActionPerformed
+        LoadManageCarsPanel();
+    }//GEN-LAST:event_manageCarsButtonActionPerformed
+
+    private void manageCustomersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageCustomersButtonActionPerformed
+        LoadManageCustomersPanel();
+    }//GEN-LAST:event_manageCustomersButtonActionPerformed
+
+    private void manageUsersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageUsersButtonActionPerformed
+        LoadUsersManagementPanel();
+    }//GEN-LAST:event_manageUsersButtonActionPerformed
+
+    private void newRentalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newRentalButtonActionPerformed
+        LoadNewRentalPanel();
+    }//GEN-LAST:event_newRentalButtonActionPerformed
+
+    private void returnCarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnCarButtonActionPerformed
+        LoadReturnCarPanel();
+    }//GEN-LAST:event_returnCarButtonActionPerformed
+
+    private void overdueRentalsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_overdueRentalsButtonActionPerformed
+        LoadOverdueRentalsPanel();
+    }//GEN-LAST:event_overdueRentalsButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -222,5 +276,59 @@ public class LayoutView extends javax.swing.JFrame {
         bodyPanel.revalidate();
         
         
+    }
+
+    private void LoadManageCarsPanel() {
+        bodyPanel.removeAll();
+        ManageCarsPanel manageCarsPanel =new ManageCarsPanel();
+        manageCarsPanel.setSize(bodyPanel.getWidth(), bodyPanel.getHeight());
+        bodyPanel.add(manageCarsPanel);
+        bodyPanel.repaint();
+        bodyPanel.revalidate();
+    }
+
+    private void LoadManageCustomersPanel() {
+        bodyPanel.removeAll();
+        ManageCustomersPanel manageCustomersPanel =new ManageCustomersPanel();
+        manageCustomersPanel.setSize(bodyPanel.getWidth(), bodyPanel.getHeight());
+        bodyPanel.add(manageCustomersPanel);
+        bodyPanel.repaint();
+        bodyPanel.revalidate();
+    }
+
+    private void LoadUsersManagementPanel() {
+        bodyPanel.removeAll();
+        UsersManagementPanel usersManagementPanel =new UsersManagementPanel();
+        usersManagementPanel.setSize(bodyPanel.getWidth(), bodyPanel.getHeight());
+        bodyPanel.add(usersManagementPanel);
+        bodyPanel.repaint();
+        bodyPanel.revalidate();
+    }
+
+    private void LoadNewRentalPanel() {
+         bodyPanel.removeAll();
+        NewRentalPanel newRentalPanel =new NewRentalPanel();
+        newRentalPanel.setSize(bodyPanel.getWidth(), bodyPanel.getHeight());
+        bodyPanel.add(newRentalPanel);
+        bodyPanel.repaint();
+        bodyPanel.revalidate();
+    }
+
+    private void LoadReturnCarPanel() {
+        bodyPanel.removeAll();
+        ReturnCarPanel returnCarPanel =new ReturnCarPanel();
+        returnCarPanel.setSize(bodyPanel.getWidth(), bodyPanel.getHeight());
+        bodyPanel.add(returnCarPanel);
+        bodyPanel.repaint();
+        bodyPanel.revalidate();
+    }
+
+    private void LoadOverdueRentalsPanel() {
+         bodyPanel.removeAll();
+        OverdueRentalsPanel overdueRentalsPanel =new OverdueRentalsPanel();
+        overdueRentalsPanel.setSize(bodyPanel.getWidth(), bodyPanel.getHeight());
+        bodyPanel.add(overdueRentalsPanel);
+        bodyPanel.repaint();
+        bodyPanel.revalidate();
     }
 }

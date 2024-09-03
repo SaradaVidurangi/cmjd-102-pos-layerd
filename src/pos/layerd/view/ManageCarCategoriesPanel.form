@@ -17,8 +17,8 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="manageCarCategoriesHeaderPanel" max="32767" attributes="0"/>
-          <Component id="manageCarCategoriesBottomPanel" alignment="0" pref="744" max="32767" attributes="0"/>
-          <Component id="manageCarCategoriesTopPanel" alignment="0" pref="744" max="32767" attributes="0"/>
+          <Component id="manageCarCategoriesBottomPanel" alignment="0" max="32767" attributes="0"/>
+          <Component id="manageCarCategoriesTopPanel" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -161,6 +161,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Add Categories"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addCategoriesButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="deleteCategoriesButton">
           <Properties>
