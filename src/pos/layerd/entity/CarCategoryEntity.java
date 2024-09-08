@@ -63,6 +63,11 @@ public class CarCategoryEntity {
     public void setDaily_rate(Double daily_rate) {
         this.daily_rate = daily_rate;
     }
+
+    @Override
+    public String toString() {
+        return "CarCategoryEntity{" + "category_id=" + category_id + ", category_name=" + category_name + ", daily_rate=" + daily_rate + '}';
+    }
     
     
 }
