@@ -18,11 +18,11 @@ public class DaoFactory {
     public static DaoFactory getInstance(){
         if(daoFactory==null){
             daoFactory = new DaoFactory();
-        
+        }
             return daoFactory;
             
             }
-        public SuperDao getDao(DaoTypes type ){
+        public SuperDao getDao(DaoTypes type){
             switch (type) {
                 case CARCATEGORY:
                     
@@ -35,3 +35,4 @@ public class DaoFactory {
               CARCATEGORY
     }}
 
+ 
